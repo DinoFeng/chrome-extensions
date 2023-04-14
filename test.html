@@ -1,0 +1,852 @@
+<html class="loaded" id="j-readPage"><head>
+<script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-PFYW0QLV3P&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-FZMMH98S83&amp;l=dataLayer&amp;cx=c"></script><script src="https://imgservices-1252317822.image.myqcloud.com/coco/s10142022/9d4d00e9.gge1cp.js"></script><script src="https://hm.baidu.com/hm.js?f00f67093ce2f38f215010b699629083" async=""></script><script async="" src="https://noah2-1252317822.file.myqcloud.com/npm/@noah-common/yep@0.0.46/dist/yep.js"></script><script src="//www.googletagmanager.com/gtag/js?id=UA-199934072-2" async=""></script><script>
+var name = "seo-jump-referrer";
+try {
+var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+var seoReferer = document.cookie.match(reg);
+if(seoReferer && seoReferer[2]){
+Object.defineProperty(document, "referrer", {
+value: decodeURIComponent(seoReferer[2])
+});
+document.cookie = name+'=;domain=.qidian.com;path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT';
+}
+} catch (error) {
+console.log(error);
+}
+if (window.outerWidth <= 1024 && navigator.userAgent.match(/(Android|iPhone|SymbianOS|Windows Phone|iPad|iPod|HarmonyOS)/i) && !navigator.userAgent.match(/spider/i)) {
+var url = getMUrl();
+if (url) {
+if (location.search) {
+if (/source=m_jump/.test(location.search)) {
+url += location.search.replace("source=m_jump", "source=pc_jump")
+} else if (/source=pc_jump/.test(location.search)) {
+url += location.search
+} else {
+url += (location.search + "&source=pc_jump")
+}
+} else {
+url += "?source=pc_jump"
+}
+setCookie(name, document.referrer, '.qidian.com', '/', 60000)
+window.location.href = url;
+}
+}
+function setCookie(name, value, domain, path, expires) {
+if (expires) {
+expires = new Date(+new Date() + expires);
+}
+var tempcookie = name + '=' + escape(value) +
+((expires) ? '; expires=' + expires.toGMTString() : '') +
+((path) ? '; path=' + path : '') +
+((domain) ? '; domain=' + domain : '');
+if (tempcookie.length < 4096) {
+document.cookie = tempcookie;
+}
+return this;
+}
+function getMUrl(){
+var env = "" ;
+var origin = `https://${env}m.qidian.com/`;
+var mUrl = '';
+var curUrl = document.URL;
+// 首页
+if (location.pathname === '/') {
+mUrl = `https://${env}m.qidian.com/`;
+}
+//搜索
+var urlMatch = curUrl.match(/\/soushu\/(\S+)/i);
+if(urlMatch){
+mUrl = `${origin}soushu/${urlMatch[1]}`;
+}
+//往期强推和往期三江
+urlMatch = curUrl.match(/\/book\/(strongrec|sanjiang)/i);
+if(urlMatch){
+mUrl = `${origin}${urlMatch[1]}/`;
+}
+//免费和完本
+urlMatch = curUrl.match(/\/(mm\/|)(free|finish)/i);
+if (urlMatch) {
+var mm = urlMatch[1] === 'mm' ? '/female' : '';
+mUrl = `${origin}${urlMatch[2]}${mm}/`;
+}
+// 分类
+urlMatch = curUrl.match(/\/(mm\/|)all\/((chanId(\d+)|)(-subCateId(\d+)|)(-(\S+)|)\/|)/i);
+if (urlMatch) {
+var mm = urlMatch[1] === 'mm/' ? 'female' : 'male';
+if(urlMatch[6]){
+mUrl = `${origin}category/catid${urlMatch[4]}/subcatid${urlMatch[6]}-${mm}/`;
+}else if(urlMatch[4] && ["13100","14300","13700","14100","14400","14500","19100"].indexOf(urlMatch[4])==-1) {
+mm = ["80", "81", "82", "83", "84", "85","86", "87", "88", "30083", "30120"].indexOf(urlMatch[4]) > -1 ? '/female' : '';
+mUrl = `${origin}category/catid${urlMatch[4]}${mm}/`;
+}else{
+mm = urlMatch[1] === 'mm/' ? '/female' : '';
+mUrl = `${origin}category${mm}/`;
+}
+}
+// 排行榜
+urlMatch = curUrl.match(/\/rank(\/mm|)(\/(yuepiao|readindex|hotsales|newfans|collect|recom|newauthor)|)/i);
+if (urlMatch) {
+var mm = urlMatch[1] === '/mm' ? '/female' : '';
+mUrl = `${origin}rank${mm}${urlMatch[2]}/`;
+}
+//大神
+urlMatch = curUrl.match(/\/dashen/i)
+if (urlMatch) {
+mUrl = `${origin}dashen/`;
+}
+// 荣誉页
+urlMatch = curUrl.match(/\/honor\/(\d+)/);
+if (urlMatch) {
+mUrl = `${origin}book/${urlMatch[1]}/badge`;
+}
+// 书详情
+urlMatch = curUrl.match(/\/info\/(\d+)/);
+if (urlMatch) {
+mUrl = `${origin}book/${urlMatch[1]}.html`;
+if(curUrl.match(/#Catalog/)){
+mUrl = `${origin}book/${urlMatch[1]}/catalog`;
+}
+}
+// 书单
+urlMatch = curUrl.match(/\/booklist/);
+if (urlMatch) {
+mUrl = curUrl.replace('book.qidian.com', 'm.qidian.com');
+}
+// 阅读页
+urlMatch = curUrl.match(/\/chapter/);
+if (urlMatch) {
+mUrl = `${origin}book/` + '3242304' + '/' + '83616812' + '/';
+}
+// 书末页
+urlMatch = curUrl.match(/\/lastpage\/(\d+)/);
+if (urlMatch) {
+mUrl = `${origin}book/${urlMatch[1]}/end/`;
+}
+return mUrl
+}
+</script>
+
+<meta charset="UTF-8">
+
+<title>异常生物见闻录_第五百六十三章 晶核研究站在线阅读-起点中文网</title>
+<meta name="keywords" content="异常生物见闻录,第五百六十三章 晶核研究站">
+<meta name="description" content="起点中文网提供异常生物见闻录,第五百六十三章 晶核研究站在线阅读服务,想看异常生物见闻录最新章节,欢迎关注起点中文网异常生物见闻录频道,第一时间阅读异常生物见闻录最新章节!">
+<meta name="robots" content="all">
+<meta name="googlebot" content="all">
+<meta name="baiduspider" content="all">
+<meta http-equiv="mobile-agent" content="format=wml; url=http://m.qidian.com/book/3242304/83616812">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.qidian.com/book/3242304/83616812">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.qidian.com/book/3242304/83616812">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="mobile-agent" content="format=html5;url=https://m.qidian.com/book/3242304/83616812/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.qidian.com/book/3242304/83616812/">
+<script>
+document.domain = 'qidian.com';
+</script>
+
+<script>
+// M站设置了一年，这里fixed
+if (getCookie('tf') == 1) {
+setCookie('tf', 1, 'qidian.com', '/', 0);
+}
+// start 防劫持
+//设置cookie
+function setCookie(name, value, domain, path, expires) {
+if(expires){
+expires = new Date(+new Date() + expires);
+}
+var tempcookie = name + '=' + escape(value) +
+((expires) ? '; expires=' + expires.toGMTString() : '') +
+((path) ? '; path=' + path : '') +
+((domain) ? '; domain=' + domain : '');
+//Ensure the cookie's size is under the limitation
+if(tempcookie.length < 4096) {
+document.cookie = tempcookie;
+}
+}
+//获取cookie
+function getCookie(name) {
+var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+if (arr = document.cookie.match(reg))
+return (arr[2]);
+else
+return null;
+}
+//创建并发送请求
+function createSender(url){
+var img = new Image();
+img.onload = img.onerror = function(){
+img = null;
+};
+img.src = url;
+};
+</script>
+<link data-ignore="true" rel="shortcut icon" type="image/x-icon" href="//qdfepccdn.qidian.com/www.qidian.com/favicon/qd_icon.0905b.ico">
+<link data-ignore="true" rel="Bookmark" type="image/x-icon" href="//qdfepccdn.qidian.com/www.qidian.com/favicon/qd_icon.0905b.ico">
+
+<meta name="servertime" content="1681364281">
+<script>
+(function() {
+var ga = document.createElement("script");
+ga.src = "//www.googletagmanager.com/gtag/js?id=UA-199934072-2";
+ga.async = 1;
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(ga, s);
+})();
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-199934072-2');
+gtag('config', 'G-PFYW0QLV3P');
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['QDAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://noah2-1252317822.file.myqcloud.com/npm/@noah-common/yep@0.0.46/dist/yep.js','yep');
+yep('set', {
+appid: 10038,
+rate: 0.02
+})
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+var domain = window.location.hostname;
+hm.src = "https://hm.baidu.com/hm.js?f00f67093ce2f38f215010b699629083";
+hm.async = 1;
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/116594983210.js"></script>
+
+<script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/l0ir4.js"></script>
+
+<script data-ignore="true" src="//qdfepccdn.qidian.com/www.qidian.com/fock/e1669345466848.js"></script>
+<script data-ignore="true" src="https://ssl.captcha.qq.com/TCaptcha.js"></script><script type="text/javascript" async="" src="https://captcha.gtimg.com/1/tcaptcha-frame.00dc54e7.js"></script>
+
+
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/icon.a578d.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/Drag.41d31.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/Checkbox.ef549.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/reset.ddecf.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/global.d41d8.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/font.f575c.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/module.dfc6d.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/footer.d162d.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/read.d1f59.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/weekly_hot_rec.4aed7.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/review.059c8.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/emoji.672ad.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/layout.2aada.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/qd_popup.1f168.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/book_popup.cf37e.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/vote_popup.b9d55.css">
+<link rel="stylesheet" href="//qdfepccdn.qidian.com/www.qidian.com/css/subscribe_protect_dialog.1af9c.css">
+
+<script src="//qidian.gtimg.com/headless/index.js" data-ignore="true"></script>
+<style type="text/css">@keyframes animate_dots{0%{opacity:1}to{opacity:0}}@-webkit-keyframes animate_dots{0%{opacity:1}to{opacity:0}}.dot0,.dot1{animation:animate_dots .9s infinite;-moz-animation:animate_dots .9s infinite;-webkit-animation:animate_dots .9s infinite;-o-animation:animate_dots .9s infinite}.dot1{animation-delay:.2s;-webkit-animation-delay:.2s}.dot2{animation:animate_dots .9s infinite;-moz-animation:animate_dots .9s infinite;-webkit-animation:animate_dots .9s infinite;-o-animation:animate_dots .9s infinite;animation-delay:.4s;-webkit-animation-delay:.4s}.dots_item{display:inline-block;margin-right:5px;width:10px;height:10px;border-radius:50%;background:#4886ff}.verify-icon{position:absolute;width:100%;margin-top:70px;text-align:center}.t-embed-loading{position:relative;width:300px;height:230px;background-color:#fff}.t-embed-dots{position:absolute;left:50%;top:50%;margin-left:-22.5px;margin-top:-5px}.t-embed-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;background:#4886ff}.t-mask{width:100%;height:100%;position:fixed;_position:absolute;left:0;top:0;background:#000;opacity:.5;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);z-index:2000000000}</style><input type="hidden" id="_w_simile" data-inspect-config="3"><script type="text/javascript" src="chrome-extension://dbjbempljhcmhlfpfacalomonjpalpko/scripts/inspector.js"></script><script type="text/javascript" src="https://static.geetest.com/static/tools/gt.js"></script><script type="text/javascript" src="https://ssl.captcha.qq.com/TCaptcha.js"></script><link charset="utf-8" rel="stylesheet" href="https://qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/LightTip.css"><link charset="utf-8" rel="stylesheet" href="https://qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/Panel.css"><link charset="utf-8" rel="stylesheet" href="https://qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/Popup.css"><link charset="utf-8" rel="stylesheet" href="https://qdfepccdn.qidian.com/www.qidian.com/css/lbfUI/css/Drag.css"><style name="lbf-overlay">.lbf-overlay { position:fixed; top:0; left:0;}</style><meta id="qdcstd" name="timedistance" content="0"></head>
+<body class="theme-0" _c_t_j1="1" cz-shortcut-listen="true" style="zoom: 1;">
+<div class="read-header" id="readHeader" data-l1="40">
+<div class="wrap-center cf">
+<div class="left-nav fl">
+<!-- <div class="logo">
+<a class="logo-ico" href="javascript:"></a>
+</div> -->
+<ul>
+<li class="site" data-l2="1">
+<a class="pin-logo" href="//www.qidian.com" target="_blank" data-eid="qd_R01"><span class="third-remove"></span></a>
+<div class="dropdown third-remove">
+<a href="//www.qdmm.com" target="_blank" data-eid="qd_R02">起点女生网</a>
+<a href="http://chuangshi.qq.com" target="_blank" data-eid="qd_R03">创世中文网</a>
+<a href="http://yunqi.qq.com" target="_blank" data-eid="qd_R04">云起书院</a>
+</div>
+</li>
+<li class="app" data-l2="2">
+<cite>手机阅读</cite>
+<div class="dropdown scan-app hidden">
+<div class="box">
+<i class="qd-logo"></i>
+<h3>扫描下载起点读书客户端</h3>
+<!-- <img id="readQrcode" src="https://imgservices-1252317822.image.myqcloud.com/image/121720210145357/902b7c21.png"> -->
+<div data-bid="3242304" data-cid="83616812" class="header-mobile-qrcode" id="readQrcodeMobile" title="https://qdd.gg/6MMTDZJf"><canvas width="320" height="320" style="display: none;"></canvas><img alt="Scan me!" src="data:image/png;base64,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" style="display: block;"></div>
+<a href="https://itunes.apple.com/cn/app/id534174796?mt=8" target="_blank" data-eid="qd_R05"><em class="iconfont"></em>App store 下载</a>
+<a href="http://download.qidian.com/apknew/source/QDReader.apk" target="_blank" data-eid="qd_R06"><em class="iconfont"></em>Android 下载</a>
+</div>
+</div>
+</li>
+<li id="j_nearRead" data-l2="3">
+<cite>最近阅读</cite>
+</li>
+<li class="quick-nav" data-l2="4">
+<cite><i class="iconfont"></i>快速导航</cite>
+<div class="dropdown type-list">
+<div class="type-box">
+<h3>分类频道</h3>
+<a href="//www.qidian.com/xuanhuan/" data-eid="qd_R13" target="_blank">玄幻</a>
+<a href="//www.qidian.com/qihuan/" data-eid="qd_R14" target="_blank">奇幻</a>
+<a href="//www.qidian.com/wuxia/" data-eid="qd_R15" target="_blank">武侠</a>
+<a href="//www.qidian.com/xianxia/" data-eid="qd_R16" target="_blank">仙侠</a>
+<a href="//www.qidian.com/dushi/" data-eid="qd_R17" target="_blank">都市</a>
+<a href="//www.qidian.com/xianshi/" data-eid="qd_R18" target="_blank">现实</a>
+<a href="//www.qidian.com/lishi/" data-eid="qd_R20" target="_blank">历史</a>
+<a href="//www.qidian.com/junshi/" data-eid="qd_R19" target="_blank">军事</a>
+<a href="//www.qidian.com/youxi/" data-eid="qd_R21" target="_blank">游戏</a>
+<a href="//www.qidian.com/tiyu/" data-eid="qd_R22" target="_blank">体育</a>
+<a href="//www.qidian.com/kehuan/" data-eid="qd_R23" target="_blank">科幻</a>
+<a href="//www.qidian.com/all/chanId20109/" data-eid="qd_R23" target="_blank">诸天无限</a>
+<a href="//www.qidian.com/lingyi/" data-eid="qd_R24" target="_blank">悬疑</a>
+<a href="//www.qidian.com/2cy/" class="ecy" data-eid="qd_R26" target="_blank"> 轻小说</a>
+<a href="//www.qidian.com/finish/" data-eid="qd_R27" target="_blank">完本</a>
+<a href="//www.qdmm.com/" data-eid="qd_R25" target="_blank">女生</a>
+<a href="//www.qidian.com/book/sanjiang/" data-eid="qd_R28" target="_blank">三江</a>
+</div>
+<div class="type-box">
+<h3>其它</h3>
+<a href="//write.qq.com/college" data-eid="qd_R29" target="_blank">投稿</a>
+<a href="https://www.qidian.com/help/index/2" data-eid="qd_R30" target="_blank">签约</a>
+<a href="//wwwploy.qidian.com/ploy/20150520qdsp/theme1.htm" data-eid="qd_R31" target="_blank">福利</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="read-login fr">
+<ul>
+<li id="min-search" data-l2="5">
+<form action="//www.qidian.com/search" method="get" target="_blank">
+<input class="submit-input" type="submit" id="searchSubmit" data-eid="qd_R32">
+<input id="pin-input" class="pin-input hide" name="kw" type="text" placeholder="从十倍张三丰天赋开始">
+<label id="pin-search" for="searchSubmit" data-eid="qd_R32"><em class="iconfont"></em></label>
+</form>
+</li>
+<li class="line"></li>
+<li class="sign-out hidden" data-l2="6">
+<a id="pin-login" href="javascript:" data-eid="qd_R33">登录</a>
+<a class="reg" href="//passport.qidian.com/reg.html?appid=10&amp;areaid=1&amp;target=iframe&amp;ticket=1&amp;auto=1&amp;autotime=30&amp;returnUrl=http%3A%2F%2Fwww.qidian.com" target="_blank" data-eid="qd_R34">注册</a>
+</li>
+<li class="sign-in" data-l2="6">
+<a href="//my.qidian.com/" target="_blank" data-eid="qd_R36"><i id="nav-user-name">DinoFong</i><span></span></a>
+<div class="dropdown">
+<a href="//my.qidian.com/setting/" target="_blank" data-eid="qd_R37">账户设置</a>
+<a href="//my.qidian.com/account/" target="_blank" data-eid="qd_R38">账务中心</a>
+<a href="//write.qq.com/" target="_blank" data-eid="qd_R39">作家专区</a>
+<a id="exit" href="javascript:" data-eid="qd_R40">退出</a>
+</div>
+</li>
+<li data-l2="6"><a class="qqlivepay" href="//www.qidian.com/charge/meRedirect" target="_blank" data-eid="qd_R35">充值</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<div id="j_bodyRecWrap" class="hidden"></div>
+<div class="crumbs-nav" data-l1="1">
+
+<a href="//www.qidian.com" target="_blank" data-eid="qd_G01">首页</a><em class="iconfont"></em>
+<a href="//www.qidian.com/kehuan/" target="_blank" data-chanid="9" id="j_chanId" data-eid="qd_G02">科幻</a><em class="iconfont"></em>
+<a href="//www.qidian.com/all/chanId9-subCateId251/" target="_blank">时空穿梭</a><em class="iconfont"></em>
+
+<a class="act" href="//book.qidian.com/info/3242304/" target="_blank" id="bookImg" data-bid="3242304">异常生物见闻录</a>
+</div>
+<div class="main-read-container" id="j-mainReadContainer">
+<div id="paragraph-review-app" class="section-comment-container" style="display: none; top: 0px;"><div class="section-comment-wrap"><a href="javascript:" class="iconfont close-panel"></a> <div class="section-comment-content"><div class="send-textarea"><textarea placeholder="有想法快写下来吧···" id="j-sendTextArea"></textarea> <div class="text-tools"><a href="javascript:" class="red-btn disabled">发表</a> <emoji id="j-emojiBtn" class-name="sideEmoji" class="emoji-btn"><a class="iconfont blue show-emoji" href="javascript:;"><img data-ignore="true" src="https://imgservices-1252317822.image.myqcloud.com/file/20190627/72ec036fbed8.png"></a></emoji> <i><em id="j-sendCommentCounter" class="">0</em>/150</i></div></div> <div class="reviews-wrap"><div class="total"><p>共条帖子</p></div> <div id="j-reviewWrapList" class="review-wrap-list"><ul> <!----></ul> <div class="is-end"><p>已显示全部</p></div> <div class="more-page-box" style="display: none;"><div id="j-morePageBox" data-page="1" data-pagemax="100" class="pagination"></div></div></div></div></div></div> <!----> <!----> <!----> <!----></div>
+
+
+<div class="read-main-wrap font-family01" style="font-size:18px" id="j_readMainWrap">
+<div id="j_chapterBox" data-l1="3">
+
+
+<div class="text-wrap" id="chapter-83616812" data-cid="83616812" data-purl="//vipreader.qidian.com/chapter/3242304/83588194/" data-nurl="//vipreader.qidian.com/chapter/3242304/83635687/" data-info="1|83588194|83635687|1|1|1|1" data-checklevel="15">
+
+<div class="main-text-wrap ">
+<div class="text-head">
+
+<div class="guide-box">
+<cite></cite>
+<p>点击书签后，可收藏每个章节的书签，“阅读进度”可以在个人中心书架里查看</p>
+</div>
+<a class="book-mark" href="javascript:" title="书签" data-cid="83616812" data-bid="3242304" data-auid="4362948" data-eid="qd_R104"></a>
+
+<h3 class="j_chapterName" data-type="2">
+<span class="content-wrap">第五百六十三章 晶核研究站</span>
+<span class="review-count" data-segid="-1"><i><cite></cite></i>3</span></h3>
+<div class="text-info cf">
+<div class="info fl">
+
+<a href="//book.qidian.com/info/3242304/" target="_blank" data-bid="3242304" data-auid="4362948" data-eid="qd_R102"><em class="iconfont"></em>异常生物见闻录</a>
+
+
+<a href="//my.qidian.com/author/4362948/" target="_blank" data-bid="3242304" data-auid="4362948" data-eid="qd_R103"><em class="iconfont"></em>远瞳</a>
+
+<i class="num-icon">
+
+
+<em class="icon-word-cut">
+<span class="num-word-cut">
+<span class="num num1">1</span>
+<span class="num num9">9</span>
+<span class="num num7">7</span>
+</span>
+</em>
+
+<span class="j_chapterWordCut">2807</span>字
+</i>
+<i><em class="iconfont"></em><span class="j_updateTime" style="background: url(&quot;blob:https://vipreader.qidian.com/f88070fe-d804-4e20-b979-4749f5e0bc7b&quot;) center bottom / auto 1px no-repeat; min-width: 112px;">2015.05.23 20:04</span></i>
+</div>
+<!-- start 评论列表 -->
+<!--
+<div class="top-comment-wrap fr">
+
+<i class="j_comReplyNum"></i>
+<a class="comment-btn" href="javascript:" title="评论"><em class="iconfont">&#xe64d;</em></a>
+<dl class="user-post-list" data-threadId="0">
+
+</dl>
+
+</div>
+-->
+<!-- end 评论列表 --></div>
+</div>
+
+
+
+
+
+<div class="read-content j_readContent" id="j_83616812"><p data-type="2"><span class="content-wrap">　　　　阿拉曼达传送站上空亮起一道光束，光芒褪去之后，郝仁一行出现在传送门平台上。现在这颗星球正好迎来日落，太阳已经快要完全落下山去，最后一道霞光在黄金之都的废墟上弥散开来，整座城市都笼罩在一层暗淡的金辉中。</span><span class="review-count hidden" data-segid="1"></span></p><p data-type="2"><span class="content-wrap">　　薇薇安抬头看向天空，她看到暗淡的天光中有一道不规则的银白色亮光正随着阳光减弱而愈发清晰起来。那亮光的规模略小于在地球上看月亮，边缘曲曲折折如同群山，她凝神细看，在那银辉中看到了层次分明的结构：“哦——那就是研究站啊？”</span><span class="review-count" data-segid="2">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　莉莉一抬头看见月亮出来了，登时条件反射地往地上一蹲，高兴地扯着脖子干嚎：“嗷呜……嗷呜……嗷……怎么没感觉呢？”</span><span class="review-count" data-segid="3">4<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁揪着这个二货的耳朵把她拽起来：“废话！这不是月亮！”</span><span class="review-count hidden" data-segid="4"></span></p><p data-type="2"><span class="content-wrap">　　“其实我一直很好奇狼人看到月光之后就会亢奋到底是个什么原理，”伊扎克斯摸着下巴满脸探究兴趣，“我没有感觉到月光中有什么特殊能量，那只是正常反射的太阳光而已。”</span><span class="review-count" data-segid="5">23<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　薇薇安耸耸肩：“天知道怎么回事，我跟狼人打了一万多年交道都没搞清楚。”</span><span class="review-count" data-segid="6">22<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　这时候一道嗡鸣声突然从东方的高空传来，原来是巨龟岩台号收到命令从轨道上下来接人了。郝仁领着大家登上飞船，很快便来到那座水晶般的太空设施附近。众人在近距离观察了这个壮观的庞然大物，顿时全都惊叹不已。莉莉一脸遗憾地扒拉着耳朵：“我当时真该跟着你来看看嗷！这么壮观的事儿竟然没看见……”</span><span class="review-count" data-segid="7">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁没搭理她，只是等着飞船慢慢靠近那座太空设施的停泊港。他脑海中已经有了这座“水晶之城”的结构图，知道停泊港位于整个设施的中段。这座建筑是个结构精巧的组合体，它的中段是巨大的控制中枢，带有用于飞船停靠、物资转运、人员居住等多种功能的舱段，而在这个中枢周围则连接着一个又一个的水晶穹顶，那些穹顶都是结构大同小异的容器，是研究站的主要工作单元。</span><span class="review-count hidden" data-segid="8"></span></p><p data-type="2"><span class="content-wrap">　　其中两个工作单元已经被激活，不过目前只有一个长子完成了“收容处置”。毕竟长子是个很麻烦的东西，不但体积庞大，而且被运来的时候还夹带着大量“杂质”需要清理，再加上转移它的时候必须全程保证“摇篮曲”系统在线，所以处理起来颇费一些时间。</span><span class="review-count" data-segid="9">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　目前完成处置的是从落日火山中挖掘出来的长子，它已经被安置在一号闭锁容器中。另一个长子由于与生命巨树纠缠在一起，目前还没完成处理。</span><span class="review-count hidden" data-segid="10"></span></p><p data-type="2"><span class="content-wrap">　　郝仁看着太空停泊港的水晶连接桥已经出现在画面上，让数据终端降低了飞船速度，随后激活另一个方向的外部监视器：“看，那就是正在进行收容作业的二号样本。”</span><span class="review-count" data-segid="11">3<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　众人顿时大感兴趣地凑到全息投影前面，随后便看到了太空中那壮观的施工现场。</span><span class="review-count hidden" data-segid="12"></span></p><p data-type="2"><span class="content-wrap">　　在距离巨龟岩台号一百公里的地方是二号闭锁容器的入口，二号样本正在那里接受最后阶段的处理。只见那如山岳般的长子仍然和生命巨树融合在一起，而这个组合体上面的巨大岩块和其他杂质已经被大体清理干净。许许多多散发出晶莹微光的、仿佛不定型凝胶一样的光团正在组合体的触须藤蔓间钻进钻出，清理剩余杂质的同时完成对长子的全身扫描。那些散发出微光的光团便是研究站的“工人”，因为郝仁并没有大量研究团队可供调用，所以这座研究设施干脆就自带工作人员了。</span><span class="review-count" data-segid="13">14<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　那些清理下来的残渣废料主要是岩石和土壤，但其中也含有长子在过去一万年的缓慢生理活动中排放出来的化学物质以及表皮脱落的某些残片，因此同样有些保留价值。它们会被送入研究站下层的另一个工场设施里进行最后一步分解，把有用的东西都提取干净之后再投入塔纳古斯大气层烧毁。</span><span class="review-count" data-segid="14">5<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　“生命巨树和二号样本已经长在一块，一时半会没法分割，所以我准备把这玩意儿整个塞进容器里去，”郝仁指着画面上的二号容器，那容器上方的仿佛贝壳一样的水晶穹顶正在缓缓张开，露出里面的庞大空间，“在放进去之前，长子的所有触须以及它和生命巨树的连接点上都被安置了传感器和神经阻断器，这样到时候做试验什么的就会轻松很多。”</span><span class="review-count hidden" data-segid="15"></span></p><p data-type="2"><span class="content-wrap">　　二号容器的穹顶已经完全张开，长子与生命巨树的组合体在一团光芒的包裹下缓缓被推入其中。当整个样本彻底浸没到容器内部之后，一层近乎透明的光膜出现在容器内壁和样本之间的空隙中，将样本包裹成仿佛一个“茧”的形态，随后某种稀薄的、如云如液的物质被注入其中，逐渐将长子浸泡起来。</span><span class="review-count" data-segid="16">5<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　完成这最后一步操作之后，水晶穹顶开始缓缓闭合。</span><span class="review-count hidden" data-segid="17"></span></p><p data-type="2"><span class="content-wrap">　　巨龟岩台号接到了研究站传来的报告：“二号容器执行确认操作……主屏障层闭合，中性介质液灌注完成，信号传递测试……正常，二级安全屏障闭合，外部穹顶闭合。所有安全组件检测通过，信号连接至中枢控制区，研究站主机接管容器。收容操作完成。”</span><span class="review-count" data-segid="18">2<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　莉莉绷着脸表情严肃地听完报告，神态俨然地点头：“嗯，报告确认。”</span><span class="review-count" data-segid="19">7<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁拍了她脑袋一下：“你确认个毛线！”</span><span class="review-count" data-segid="20">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　莉莉用尾巴使劲拍着座椅的靠背：“因为这个很带感啊！”</span><span class="review-count" data-segid="21">6<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　观摩完那巨型容器的收容过程之后，巨龟岩台号才平稳地在飞船停泊港降落。众人离开飞船，走上一条斑斓的、仿佛彩虹一般的结晶长桥，长桥上空是一层近乎透明的屏障，越过屏障可以直接看到外面的灿烂星空，而长桥的四面八方则都是晶莹剔透的水晶形成的建筑设施。莉莉一看见这亮晶晶的场景就高兴起来：“呀！这地方看着好漂亮！比柯依伯站还好看多了诶！”</span><span class="review-count" data-segid="22">3<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　薇薇安也摸着下巴评论：“你看这审美观多正常，怎么分给你的那些设备就都长个棺材样呢？”</span><span class="review-count" data-segid="23">7<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁嘴角抽抽着：“看样子女神姐姐总算有个正常的地方了：她盖房子的时候审美观是正常的。”</span><span class="review-count" data-segid="24">14<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　一行人沿着结晶桥往里走，走着走着莉莉就开始偷偷往旁边挪，金色的眸子里映着兴奋的光彩。郝仁打从一开始可就盯着这个哈士奇呢，这时候瞬间叫住她：“莉莉你干嘛呢？”</span><span class="review-count hidden" data-segid="25"></span></p><p data-type="2"><span class="content-wrap">　　莉莉的尾巴砰一下子炸开，小跳着跑回来：“我去看看桥边有护栏没有……”</span><span class="review-count" data-segid="26">2<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁翻着白眼：“不准在这里挖石头，我就知道你想给你的汪之财宝里添两块水晶！”</span><span class="review-count hidden" data-segid="27"></span></p><p data-type="2"><span class="content-wrap">　　莉莉的耳朵顿时软趴下去：“就敲一块行呗？”</span><span class="review-count" data-segid="28">3<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁被这货的模样逗乐了：“别闹，这可是新房子——而且我就不信你真能从这地方敲下石头来，这监狱可是用来关押长子的。”</span><span class="review-count hidden" data-segid="29"></span></p><p data-type="2"><span class="content-wrap">　　薇薇安在旁边给莉莉瞎出主意：“你回家可以去玻璃市场看看，反正你捡石头回去也是摆着看，差不多就行……”</span><span class="review-count" data-segid="30">2<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　莉莉尾巴一甩，不搭理这俩了。</span><span class="review-count" data-segid="31">6<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　等众人来到中枢区域的时候郝仁突然想起件事：“对了，我还没给这研究站起名字呢。”</span><span class="review-count hidden" data-segid="32"></span></p><p data-type="2"><span class="content-wrap">　　郝仁话音刚落，顿时周围所有人都齐刷刷地停下脚步，薇薇安和莉莉几乎是异口同声：“你再想想！”</span><span class="review-count" data-segid="33">4<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁摸着头发：“我还没说呢啊，我觉得叫……”</span><span class="review-count hidden" data-segid="34"></span></p><p data-type="2"><span class="content-wrap">　　薇薇安表情诚恳地按住郝仁的嘴：“别出声，用心去思考——你再想想。”</span><span class="review-count" data-segid="35">14<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁：“……”</span><span class="review-count" data-segid="36">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　“他再想想也就那样，能给闺女起名叫郝豆豆，给猫起名叫滚，他还能想出多高大上的名字来，”数据终端晃晃悠悠升到半空，“别纠结了，这研究站有名字，晶核研究站——就在你们头顶飘着呢。”</span><span class="review-count" data-segid="37">6<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁抬头一看，果然大厅的结晶穹顶上飘着某种控制中枢的待机画面，而待机画面中央就是这座研究站的名字。他大为惊讶：“这次渡鸦姐姐的起名字能力怎么正常了？”</span><span class="review-count" data-segid="38">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　“正常个毛线，”数据终端跟研究站主机接洽了一下，很快搞明白真相，“你看这研究站离远了像不像个苹果核？”</span><span class="review-count" data-segid="39">2<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁：“……”</span><span class="review-count" data-segid="40">1<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　“所以它全称是‘水晶苹果核研究站’，晶核是简称。”</span><span class="review-count" data-segid="41">29<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　郝仁：“……我就不该问原因！”</span><span class="review-count" data-segid="42">2<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap">　　（身心俱疲= 。=）</span><span class="review-count" data-segid="43">16<i><cite></cite></i></span></p><p data-type="2"><span class="content-wrap"> </span><span class="review-count hidden" data-segid="44"></span></p></div>
+
+
+
+<div class="admire-wrap">
+<!-- <a class="report-btn j_reportBtn" href="javascript:" data-eid="qd_R106"><em class="iconfont">&#xe657;</em>举报</a> -->
+<a class="report-btn" id="j_reportBtn" href="https://www.qidian.com/ajax/chapter/reportChapter?siteId=1&amp;bookId=3242304&amp;chapterId=83616812&amp;_csrfToken=0sjMu2bWtFMVAY9roZ63tEMPSfkqeoEZWAzUQPoY" data-eid="qd_R106"><em class="iconfont"></em>举报</a>
+<script>
+(function() {
+function getCookie(name) {
+var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+if (match) return match[2];
+}
+document.getElementById('j_reportBtn').href += ('&_csrfToken=' + getCookie('_csrfToken'))
+})()
+</script>
+<div class="read-btn-box">
+<a class="admire lang j_admireBtn" href="javascript:" data-showtype="3" data-eid="qd_R105">赞赏<span class="j_admireNum">1</span></a>
+</div>
+<!--
+* @Description:
+* @Author: ruan fei
+* @Date: 2021-09-02 15:49:38
+* @LastEditors: ruan fei
+* @LastEditTime: 2021-09-23 10:40:14
+* @FilePath: /qidian_pc_proj/src/static/qd/js/read/chapterAdmire.dcf3d.ejs
+-->
+<dl class="user-active cf"><dd class="j_userActive">
+<a href="//my.qidian.com/user/375616294/" target="_blank"><img src="//facepic.qidian.com/qd_face/349573/0/50" alt="无暇之人"></a>
+<div class="active-bubble">
+<cite></cite>
+<span>无暇之人 打赏了 100 起点币</span>
+</div>
+</dd>
+</dl></div>
+
+
+
+<div class="chapter-end-qrcode">
+<div class="chapter-end-con jsEndCon">
+<p class="chapter-end-show jsEndHover" data-cid="83616812"><i class="icon-showcode"></i>扫一扫，手机接着读</p>
+<div class="chapter-end-hover">
+<i class="qd-logo"></i>
+<div class="qrcode" id="chapterEndQRcode-83616812" data-cid="83616812" data-nextcid="83635687"></div>
+<div class="infos">
+<i class="icon-scan"></i>
+<p class="title"><span class="red">扫一扫</span> · 手机接着看</p>
+<p class="txt">公交、地铁随心阅读，新用户还可享14天限免</p>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
+</div>
+</div><!-- start 顶部随机广告 -->
+
+<div id="page-ops" class="page-ops" data-l1="3">
+<a href="https://game.qidian.com/Game/Play/index?gameId=201454&amp;qd_game_key=900x60.jpg&amp;qd_dd_p1=131232" target="_blank" data-eid="qd_R125" data-qd_dd_p1="1">
+<img src="https://img2.qidian.com/upload/gamesy/2023/03/13/20230313170530kf0y9fagrm.jpg"><span class="op-tag"></span></a>
+
+</div>
+
+<!-- end 顶部随机广告 -->
+
+</div>
+
+<div class="chapter-control dib-wrap" data-l1="3">
+
+<a id="j_chapterPrev" data-eid="qd_R107" href="//vipreader.qidian.com/chapter/3242304/83588194/">上一章</a><span>|</span>
+<a href="//book.qidian.com/info/3242304#Catalog" target="_blank" data-eid="qd_R108">目录</a><span>|</span>
+<a id="j_chapterNext" href="//vipreader.qidian.com/chapter/3242304/83635687/" data-eid="qd_R109">下一章</a>
+</div>
+
+<div class="la-ball-pulse j_chapterLoad hidden">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
+
+
+
+<div class="weekly-hot-rec">
+<div class="read-center">
+<span class="title">同类推荐:</span>
+<div class="book-name-container">
+
+
+<a class="book-item" href="//book.qidian.com/info/1035451246/" title="赛博诡异见闻录" alt="赛博诡异见闻录在线阅读">
+赛博诡异见闻录
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1029154259/" title="灵气复苏，我从种田开始修仙" alt="灵气复苏，我从种田开始修仙在线阅读">
+灵气复苏，我从种田开始修仙
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1023661379/" title="我不是至高神" alt="我不是至高神在线阅读">
+我不是至高神
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1030499671/" title="全民领主时代：我挖墓就能变强" alt="全民领主时代：我挖墓就能变强在线阅读">
+全民领主时代：我挖墓就能变强
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1033548225/" title="我打造了神话世界" alt="我打造了神话世界在线阅读">
+我打造了神话世界
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1031451312/" title="超凡数据化：无限制合成" alt="超凡数据化：无限制合成在线阅读">
+超凡数据化：无限制合成
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1032637251/" title="小小领主的黑暗城堡" alt="小小领主的黑暗城堡在线阅读">
+小小领主的黑暗城堡
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1013468826/" title="一切从秦时明月开始崛起" alt="一切从秦时明月开始崛起在线阅读">
+一切从秦时明月开始崛起
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1027341787/" title="逆行诸天的剑客" alt="逆行诸天的剑客在线阅读">
+逆行诸天的剑客
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1036402912/" title="穿梭末日世界，开启科技崛起大门" alt="穿梭末日世界，开启科技崛起大门在线阅读">
+穿梭末日世界，开启科技崛起大门
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1012185805/" title="重建恐龙岛" alt="重建恐龙岛在线阅读">
+重建恐龙岛
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1024963728/" title="穿越美漫开局杀了小丑" alt="穿越美漫开局杀了小丑在线阅读">
+穿越美漫开局杀了小丑
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1014076340/" title="某国漫的超神学院" alt="某国漫的超神学院在线阅读">
+某国漫的超神学院
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1033509691/" title="全球领主：从招募成本减半开始" alt="全球领主：从招募成本减半开始在线阅读">
+全球领主：从招募成本减半开始
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1030072773/" title="时空穿越守则" alt="时空穿越守则在线阅读">
+时空穿越守则
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1031654059/" title="重返2019" alt="重返2019在线阅读">
+重返2019
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1029363291/" title="穿到异界当领主" alt="穿到异界当领主在线阅读">
+穿到异界当领主
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1024318740/" title="我在漫威当大佬" alt="我在漫威当大佬在线阅读">
+我在漫威当大佬
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1016101134/" title="成道于诸天万界" alt="成道于诸天万界在线阅读">
+成道于诸天万界
+</a>
+
+
+<a class="book-item" href="//book.qidian.com/info/1029881263/" title="妖魔东京我的手办变成诡异" alt="妖魔东京我的手办变成诡异在线阅读">
+妖魔东京我的手办变成诡异
+</a>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="float-wrap" id="j_floatWrap" data-l1="2">
+<div class="left-bar-list" id="j_leftBarList" style="top: 119px;">
+<dl>
+<dd id="j_navCatalogBtn" data-eid="qd_R42">
+<a href="javascript:"><i><em class="iconfont"></em><span>目录</span></i></a>
+<div class="guide-box">
+<cite></cite>
+目录
+</div>
+</dd>
+<dd id="j_navSettingBtn">
+<a href="javascript:"><i><em class="iconfont"></em><span>设置</span></i></a>
+<div class="guide-box">
+<cite></cite>
+设置
+</div>
+<div class="new-guide" id="j-sectionCommentGuide">
+<cite></cite>
+<p>段评功能已上线，<br>在此处设置开关</p>
+</div>
+</dd>
+<dd id="j_phoneRead" data-eid="qd_R83">
+<a href="javascript:"><span class="new-tag jsNew">New</span><i class="nav-phone"><em class="iconfont"></em><span>手机</span></i><i class="nav-listen"><em class="icon-listen"></em><span>听书</span></i></a>
+<div class="guide-box">
+<cite></cite>
+手机阅读
+</div>
+</dd>
+
+<dd data-eid="qd_R84">
+<a class="add-book in-shelf" href="javascript:" data-bookid="3242304">已在书架</a>
+<div class="guide-box">
+<cite></cite>
+加入书架
+</div>
+</dd>
+<dd data-eid="qd_R85">
+<a href="//book.qidian.com/info/3242304/" target="_blank"><i><em class="iconfont"></em><span>书页</span></i></a>
+<div class="guide-box">
+<cite></cite>
+返回书页
+</div>
+</dd>
+<dd id="j_navGameBtn" data-eid="qd_R86">
+
+<a href="javascript:"><i><em class="iconfont"></em><span>游戏</span></i></a>
+<div class="guide-box">
+<cite></cite>
+起点游戏
+</div>
+</dd>
+
+</dl>
+</div>
+<div class="right-bar-list" id="j_rightBarList" style="bottom: 0px;">
+
+<dl>
+
+
+<dd id="navReward" data-showtype="3" data-aid="qd_R87">
+<a href="javascript:"><i><em class="iconfont"></em><span>打赏</span></i></a>
+<div class="guide-box">
+<cite></cite>
+打赏
+</div>
+</dd>
+
+
+<dd id="navTicket" data-showtype="2" data-aid="qd_R88">
+<a href="javascript:"><i><em class="iconfont"></em><span>投票</span></i></a>
+<div class="guide-box">
+<cite></cite>
+投票
+</div>
+</dd>
+
+
+<!--
+<dd id="j_discussHref" data-eid="qd_R89">
+
+<a href="//forum.qidian.com/NewForum/List.aspx?forumId=3242304" target="_blank"><i><em class="iconfont">&#xe658;</em><span>评论</span></i></a>
+<div class="guide-box">
+<cite></cite>
+评论
+</div>
+</dd>
+-->
+<dd class="go-top" id="j_goTop" title="返回顶部" data-eid="qd_R90" style="display: none;">
+<a href="javascript:"><i><em class="iconfont"></em></i></a>
+</dd>
+
+</dl>
+</div>
+<div class="guide-btn-wrap">
+<a class="guide-btn" id="j_guideBtn" href="javascript:" data-eid="qd_R41">指南</a>
+</div>
+</div>
+
+<div id="userLevel" class="hidden">0</div>
+<div id="authorId" data-authorid="4362948" class="hidden"></div>
+<script>
+//全局的通用数据都放g_data变量里
+var g_data = {};
+//环境变量，会按照环境选择性打log
+g_data.envType = 'pro';
+g_data.staticPath = '//qdfepccdn.qidian.com/www.qidian.com';
+//用作统计PV
+g_data.pageId = 'qd_P_vipread';
+//环境域名
+g_data.domainSearch = 'www.qidian.com/soushu';
+//阅读页配置参数
+g_data.readSetting = {
+"t" : 0,
+"ft" : 0,
+"fs" : 3,
+"w" : 1,
+"rt" : 0,
+"autoBuy" : 0,
+"readType" : 0
+};
+g_data.isPublication = false;
+g_data.salesMode = 1;
+//书信息
+g_data.bookInfo = {
+"bookId":3242304,
+"bookName":'异常生物见闻录',
+"authorId":4362948,
+"authorName": '远瞳',
+"checkLevel":15,
+"bookAllAuth": 0
+};
+//非vip章节,背景广告
+
+//页面初始化章节信息
+g_data.chapter = {
+//页面进入加载的章节id
+id:83616812,
+cES: 0,
+//章节vip标识
+vipStatus : 1,
+//上一章id
+prevId : 83588194,
+//下一章id
+nextId :83635687,
+//本章节是否已经订阅
+isBuy: 1,
+freeStatus: 1,
+};
+g_data.pageOps = {"abTest":"","adCategoryName":"广告","channelStatus":"0","title":"魔力宝贝觉醒H5","type":"1","adImgUrl":"https://img2.qidian.com/upload/gamesy/2023/03/13/20230313170530kf0y9fagrm.jpg","colorType":"0","adType":"1","adJumpUrl":"https://game.qidian.com/Game/Play/index?gameId=201454&qd_game_key=900x60.jpg&qd_dd_p1=131232","isAdv":"1","blackList":"","startTime":"1681351200","whiteList":"","id":"131232","endTime":"1681437300","hasAd":1};
+// 风控信息
+g_data.riskInfo = {"banId":0,"banMessage":"","sessionKey":"","captchaAId":"","captchaURL":"","phoneNumber":"","gt":"","challenge":"","offline":0,"newCaptcha":0,"captchaType":0};
+//页面进入时,下一章是否是vip章节
+g_data.nextChapterVip = 1;
+//章节底部广告
+g_data.bottomOps = {"hasAd":0};
+//打赏参数
+g_data.pageJson = {
+// 是否是VIP书籍，传入js，在弹窗时需要判断，如果不是VIP看不到月票Tab
+isVip:1,
+// 是否是出版物
+isPublication: false,
+//是否已登录，传入js，EJS后加载模板判断是否显示
+isLogin:1,
+//是否签约作品，传入js，EJS后加载模板判断是否显示
+isSign:1,
+//是否要送月票 传入js， EJS后加载模板判断使用
+noRewardMonthTic:0,
+//获得bookId的json格式，传入js，EJS后加载模板中可以直接使用
+bookId:3242304,
+//获得签约状态，传入js，EJS后加载弹窗下载使用
+signStatus:'签约作品',
+//作家专区链接环境变量传入EJS模板
+mePreFix:'//my.qidian.com',
+//讨论区连接环境变量传入EJS模板
+forumPreFix:'//forum.qidian.com',
+// 是否可以打赏 & 推荐票 & 月票
+interact: {"recTicketEnable":1,"monthTicketEnable":1,"donateEnable":1}
+};
+// 区分女生网 && 起点中文网
+g_data.isWebSiteType = 1;
+</script>
+<script>
+(function(){
+var qr = document.createElement('script');
+qr.src = 'https://imgservices-1252317822.image.myqcloud.com/coco/s10142022/9d4d00e9.gge1cp.js';
+var qs = document.getElementsByTagName("script")[0];
+qs.parentNode.insertBefore(qr, qs);
+})();
+</script>
+<script>
+// @see src/views/book.qidian.com/info/index.html
+// var qrCodeFromBaiduWithoutLogo = 'https://imgservices-1252317822.image.myqcloud.com/image/121720210145357/23c8ada5.png'
+// if (document.referrer.indexOf('baidu.com') > -1) {
+// document.getElementById('readQrcode').src = qrCodeFromBaiduWithoutLogo;
+// }
+</script>
+
+
+<script src="https://sta.gtimg.com/aq/=/safe_h5/js/yw_risk_verify.js" async="" data-ignore="true"></script>
+
+<script src="https://qidian.gtimg.com/cdnjs/vue/2.6.10/vue.min.js" data-ignore="true"></script>
+<script data-ignore="true" id="LBFnode" src="//qdfepccdn.qidian.com/lbf/1.1.0/LBF.js?max_age=31536000"></script>
+
+<script>
+// LBF 配置
+LBF.config({"paths":{"qd":"//qdfepccdn.qidian.com/www.qidian.com","common":"//qdfepccdn.qidian.com/common/1.0.0"},"vars":{"theme":"//qdfepccdn.qidian.com/www.qidian.com/css"},"combo":false,"debug":false});
+LBF.use(['lib.jQuery'], function ($) {
+window.$ = $;
+});
+</script>
+<script>
+LBF.use(['qd/js/component/login.0e60c.js', 'qd/js/read/index.0acb0.js' ], function (Login, Index) {
+// 页面逻辑入口
+if(Login){
+Login.init().always(function(){
+Index && typeof Index === 'function' && new Index();
+})
+}
+});
+</script>
+
+
+
+
+<div id="tcaptcha_transform_dy" style="opacity: 0; position: absolute; transition: opacity 0.3s linear 0s; top: -1e+06px;"><iframe name="https://t.captcha.qq.com" id="tcaptcha_iframe_dy" frameborder="0" border="0" marginheight="0" marginwidth="0" scrolling="no" src="https://captcha.gtimg.com/1/template/drag_ele.html"></iframe></div><div class="qdlgeovrv6" style="position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;"><style>.qdlgeovrv6{z-index:199;background: repeating-linear-gradient(45deg, rgba(150,150,150,.02) 5px, transparent 30px 80px);visibility:hidden;}body.prevent .qdlgeovrv6{visibility:visible;}.qdlgeovrv6::before{content:"";display:block;width:100%;height:100%;}</style></div><script src="https://imgservices-1252317822.image.myqcloud.com/coco/s06072022/26ccde4c.lst7lt.js"></script><div class="emoji-wrap hidden side-emoji"><ul class="dib-wrap"><span class="angle"></span><a href="javascript:;" title="鼓掌" data-i="1"><li class="icon-emoji icon-emoji-1"></li></a><a href="javascript:;" title="玫瑰" data-i="2"><li class="icon-emoji icon-emoji-2"></li></a><a href="javascript:;" title="握手" data-i="3"><li class="icon-emoji icon-emoji-3"></li></a><a href="javascript:;" title="龇牙" data-i="4"><li class="icon-emoji icon-emoji-4"></li></a><a href="javascript:;" title="憨笑" data-i="5"><li class="icon-emoji icon-emoji-5"></li></a><a href="javascript:;" title="可怜" data-i="6"><li class="icon-emoji icon-emoji-6"></li></a><a href="javascript:;" title="可爱" data-i="7"><li class="icon-emoji icon-emoji-7"></li></a><a href="javascript:;" title="坏笑" data-i="8"><li class="icon-emoji icon-emoji-8"></li></a><a href="javascript:;" title="亲亲" data-i="9"><li class="icon-emoji icon-emoji-9"></li></a><a href="javascript:;" title="挖鼻孔" data-i="10"><li class="icon-emoji icon-emoji-10"></li></a><a href="javascript:;" title="流鼻涕" data-i="11"><li class="icon-emoji icon-emoji-11"></li></a><a href="javascript:;" title="大哭" data-i="12"><li class="icon-emoji icon-emoji-12"></li></a><a href="javascript:;" title="晕" data-i="13"><li class="icon-emoji icon-emoji-13"></li></a><a href="javascript:;" title="滴汗" data-i="14"><li class="icon-emoji icon-emoji-14"></li></a><a href="javascript:;" title="鄙视" data-i="15"><li class="icon-emoji icon-emoji-15"></li></a><a href="javascript:;" title="惊恐" data-i="16"><li class="icon-emoji icon-emoji-16"></li></a><a href="javascript:;" title="尴尬" data-i="17"><li class="icon-emoji icon-emoji-17"></li></a><a href="javascript:;" title="嘘" data-i="18"><li class="icon-emoji icon-emoji-18"></li></a><a href="javascript:;" title="哭" data-i="19"><li class="icon-emoji icon-emoji-19"></li></a><a href="javascript:;" title="雷" data-i="20"><li class="icon-emoji icon-emoji-20"></li></a><a href="javascript:;" title="色" data-i="21"><li class="icon-emoji icon-emoji-21"></li></a><a href="javascript:;" title="敲" data-i="22"><li class="icon-emoji icon-emoji-22"></li></a><a href="javascript:;" title="糗" data-i="23"><li class="icon-emoji icon-emoji-23"></li></a><a href="javascript:;" title="折磨" data-i="24"><li class="icon-emoji icon-emoji-24"></li></a><a href="javascript:;" title="抱抱" data-i="25"><li class="icon-emoji icon-emoji-25"></li></a><a href="javascript:;" title="吐舌" data-i="26"><li class="icon-emoji icon-emoji-26"></li></a><a href="javascript:;" title="感谢" data-i="27"><li class="icon-emoji icon-emoji-27"></li></a><a href="javascript:;" title="抓狂" data-i="28"><li class="icon-emoji icon-emoji-28"></li></a><a href="javascript:;" title="奋斗" data-i="29"><li class="icon-emoji icon-emoji-29"></li></a><a href="javascript:;" title="骷髅" data-i="30"><li class="icon-emoji icon-emoji-30"></li></a><a href="javascript:;" title="微笑" data-i="31"><li class="icon-emoji icon-emoji-31"></li></a><a href="javascript:;" title="得意" data-i="32"><li class="icon-emoji icon-emoji-32"></li></a><a href="javascript:;" title="偷笑" data-i="33"><li class="icon-emoji icon-emoji-33"></li></a><a href="javascript:;" title="擦汗" data-i="34"><li class="icon-emoji icon-emoji-34"></li></a><a href="javascript:;" title="强" data-i="35"><li class="icon-emoji icon-emoji-35"></li></a><a href="javascript:;" title="酷" data-i="36"><li class="icon-emoji icon-emoji-36"></li></a><a href="javascript:;" title="尴尬" data-i="37"><li class="icon-emoji icon-emoji-37"></li></a><a href="javascript:;" title="快哭了" data-i="38"><li class="icon-emoji icon-emoji-38"></li></a><a href="javascript:;" title="疑问" data-i="39"><li class="icon-emoji icon-emoji-39"></li></a><a href="javascript:;" title="难过" data-i="40"><li class="icon-emoji icon-emoji-40"></li></a><a href="javascript:;" title="哈欠" data-i="41"><li class="icon-emoji icon-emoji-41"></li></a><a href="javascript:;" title="吻" data-i="42"><li class="icon-emoji icon-emoji-42"></li></a><a href="javascript:;" title="害羞" data-i="43"><li class="icon-emoji icon-emoji-43"></li></a><a href="javascript:;" title="咒骂" data-i="44"><li class="icon-emoji icon-emoji-44"></li></a><a href="javascript:;" title="睡着了" data-i="45"><li class="icon-emoji icon-emoji-45"></li></a><a href="javascript:;" title="大兵" data-i="46"><li class="icon-emoji icon-emoji-46"></li></a><a href="javascript:;" title="发怒" data-i="47"><li class="icon-emoji icon-emoji-47"></li></a><a href="javascript:;" title="猪头" data-i="48"><li class="icon-emoji icon-emoji-48"></li></a><a href="javascript:;" title="困" data-i="49"><li class="icon-emoji icon-emoji-49"></li></a><a href="javascript:;" title="闭嘴" data-i="50"><li class="icon-emoji icon-emoji-50"></li></a><a href="javascript:;" title="吐" data-i="51"><li class="icon-emoji icon-emoji-51"></li></a><a href="javascript:;" title="晚安" data-i="52"><li class="icon-emoji icon-emoji-52"></li></a><a href="javascript:;" title="心" data-i="53"><li class="icon-emoji icon-emoji-53"></li></a><a href="javascript:;" title="刀" data-i="54"><li class="icon-emoji icon-emoji-54"></li></a><a href="javascript:;" title="礼物" data-i="55"><li class="icon-emoji icon-emoji-55"></li></a><a href="javascript:;" title="心碎" data-i="56"><li class="icon-emoji icon-emoji-56"></li></a><a href="javascript:;" title="加油" data-i="57"><li class="icon-emoji icon-emoji-57"></li></a><a href="javascript:;" title="阴险" data-i="58"><li class="icon-emoji icon-emoji-58"></li></a><a href="javascript:;" title="胜利" data-i="59"><li class="icon-emoji icon-emoji-59"></li></a><a href="javascript:;" title="懵" data-i="60"><li class="icon-emoji icon-emoji-60"></li></a></ul></div><div id="fatkun-drop-panel">
+<a id="fatkun-drop-panel-close-btn">×</a>
+<div id="fatkun-drop-panel-inner">
+<div class="fatkun-content">
+<svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+<div class="fatkun-title">拖拽到此处</div>
+<div class="fatkun-desc">图片将完成下载</div>
+</div>
+</div>
+</div></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
