@@ -1,25 +1,36 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "My Extension",
   "description": "A simple Chrome extension",
-  "version": "1.0",
+  "version": "1",
   "icons": {
     "128": "icon128.png"
   },
   "permissions": [
     "tabs",
     "activeTab",
+    "scripting",
     "downloads",
-    "<all_urls>",
     "notifications",
     "storage"
   ],
-  "browser_action": {
+  "action": {
     "default_title": "Get Page Content",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "jquery-3.6.4.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self' http://localhost:* http://127.0.0.1:*; object-src 'self'",
   "background": {
-    "scripts": ["jquery-3.6.4.js", "background.js"]
+    "service_worker": "background.js"
   }
 }
