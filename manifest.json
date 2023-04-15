@@ -29,7 +29,6 @@
       ]
     }
   ],
-  "content_security_policy": "script-src 'self' http://localhost:* http://127.0.0.1:*; object-src 'self'",
   "background": {
     "service_worker": "background.js"
   }

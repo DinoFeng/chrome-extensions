@@ -16,13 +16,8 @@
 // });
 
 // https://juejin.cn/post/7021072232461893639
-async function loadJQuery() {
-  const response = await fetch(chrome.runtime.getURL('jquery-3.6.4.js'))
-  const text = await response.text()
-  eval(text)
-}
 
-loadJQuery()
+const $ = importScripts('jquery-3.6.4.js')
 
 const saveFileAsync = (content, filename, callback) => {
   const utf8Data = new TextEncoder().encode(content) // 将文本编码为 UTF-8 格式
