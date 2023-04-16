@@ -6,16 +6,29 @@
 //   const x = chrome.extension.getBackgroundPage().getTabContent();
 //   alert(x);
 // });
-document.addEventListener("DOMContentLoaded", function () {
-  var getPageContentBtn = document.getElementById("get-page-content");
-  var pageContentWrapper = document.getElementById("page-content-wrapper");
 
-  getPageContentBtn.addEventListener("click", function () {
+document.addEventListener('DOMContentLoaded', function () {
+  const getPageContentBtn = document.getElementById('get-page-content')
+  const pageContentWrapper = document.getElementById('page-content-wrapper')
+  const contentInput = document.getElementById('content-selector')
+  const nextchapterInput = document.getElementById('next-chapter-selector')
+
+  getPageContentBtn.addEventListener('click', function () {
+    const content = contentInput.value || undefined
+    const next_chapter = nextchapterInput.value || undefined
     chrome.runtime.sendMessage(
-      { action: "get-page-content" },
+      {
+        action: 'get-page-content',
+        options: {
+          seletor: {
+            content,
+            next_chapter,
+          },
+        },
+      },
       function (response) {
-        pageContentWrapper.innerText = response;
+        pageContentWrapper.innerText = response
       }
-    );
-  });
-});
+    )
+  })
+})
